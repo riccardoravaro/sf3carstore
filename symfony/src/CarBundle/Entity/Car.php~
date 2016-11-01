@@ -120,6 +120,19 @@ class Car
         return $this->description;
     }
 
+    /**
+     * Sets the value of description.
+     *
+     * @param mixed $description the description
+     *
+     * @return self
+     */
+    private function _setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
 
     /**
      * Gets the value of year.
@@ -131,56 +144,18 @@ class Car
         return $this->year;
     }
 
-
     /**
-     * Set description
+     * Sets the value of year.
      *
-     * @param string $description
+     * @param mixed $year the year
      *
-     * @return Car
+     * @return self
      */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Set price
-     *
-     * @param float $price
-     *
-     * @return Car
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
-
-        return $this;
-    }
-
-    /**
-     * Get price
-     *
-     * @return float
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    /**
-     * Set year
-     *
-     * @param \DateTime $year
-     *
-     * @return Car
-     */
-    public function setYear($year)
+    private function _setYear($year)
     {
         $this->year = $year;
 
         return $this;
     }
 }
+

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    The best cars in the internet!
+{% endblock %}
+{% block body %}
+
+
+                {{ car.make }}
+                {{ car.name }}
+                {{ car.year | date("m/d/Y", "Europe/Paris") }}
+                <p> {{ car.description }}</p>
+                <p> {{ car.price }}</p>
+                <a href="{{ url('offer') }}">Back</a>
+
+
+{% endblock %}
