@@ -198,7 +198,7 @@ class Car
      *
      * @return Car
      */
-    public function setModel(\CarBundle\Model $model = null)
+    public function setModel(\CarBundle\Entity\Model $model = null)
     {
         $this->model = $model;
 

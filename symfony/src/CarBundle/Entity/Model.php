@@ -111,4 +111,9 @@ class Model
     {
         $this->cars->removeElement($car);
     }
+
+    public function __toString()
+    {
+         return $this->getName();
+    }
 }
