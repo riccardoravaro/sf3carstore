@@ -31,9 +31,16 @@ class Car
     /**
      * @var string
      *
-     * @ORM\Column(name="make", type="string", length=255)
+     * @ORM\ManytoOne(targetEntity="\CarBundle\Entity\Make", inversedBy="cars")
      */
     private $make;
+
+    /**
+     * @var model
+     * @ORM\ManyToOne(targetEntity="\CarBundle\Entity\Model", inversedBy="cars")
+     *
+     */
+     private $model;
 
 
     /**
@@ -182,5 +189,29 @@ class Car
         $this->year = $year;
 
         return $this;
+    }
+
+    /**
+     * Set model
+     *
+     * @param \CarBundle\Model $model
+     *
+     * @return Car
+     */
+    public function setModel(\CarBundle\Model $model = null)
+    {
+        $this->model = $model;
+
+        return $this;
+    }
+
+    /**
+     * Get model
+     *
+     * @return \CarBundle\Model
+     */
+    public function getModel()
+    {
+        return $this->model;
     }
 }

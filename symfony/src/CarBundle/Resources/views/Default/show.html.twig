@@ -6,17 +6,17 @@
 {% endblock %}
 {% block body %}
 
-
-
-
-
-
-
-                {{ car.make }}
-                {{ car.name }}
-                {{ car.year | date("m/d/Y", "Europe/Paris") }}
-                <p> {{ car.description }}</p>
-                <p> {{ car.price }}</p>
+              <ul>
+                  <li>{{ car.make.name }}</li>
+                  <li>{{ car.model.name }}</li>
+                  <li>{{ car.year | date("m/d/Y", "Europe/Paris") }}</li>
+                  <li>
+                      <p> {{ car.description }}</p>
+                  </li>
+                  <li>
+                      <p> {{ car.price }}</p>
+                  </li>
+              </ul>
                 <a href="{{ url('offer') }}">Back</a>
             asdfasdf
             asdfasdfad
