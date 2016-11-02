@@ -22,6 +22,9 @@
                 <td>{{ car.description }}</td>
                 <td>{{ car.price }}</td>
                 <td>{% if car.year %}{{ car.year|date('Y-m-d') }}{% endif %}</td>
+                <td><span class="glyphicon glyphicon-{% if car.promote %}ok-circle{% else %}ban-circle{% endif %}"></span>
+
+                </td>
                 <td>
                     <ul>
                         <li>
@@ -29,6 +32,9 @@
                         </li>
                         <li>
                             <a href="{{ path('car_edit', { 'id': car.id }) }}">edit</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('car_promote', { 'id': car.id }) }}">promote</a>
                         </li>
                     </ul>
                 </td>

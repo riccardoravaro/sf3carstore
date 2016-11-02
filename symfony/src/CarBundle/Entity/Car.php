@@ -192,6 +192,12 @@ class Car
     }
 
     /**
+     * @var boolean
+     * @ORM\Column(name="promote", type="boolean")
+     */
+     private $promote;
+
+    /**
      * Set model
      *
      * @param \CarBundle\Model $model
@@ -213,5 +219,40 @@ class Car
     public function getModel()
     {
         return $this->model;
+    }
+
+    /**
+     * Gets the value of promote.
+     *
+     * @return boolean
+     */
+    public function isPromote()
+    {
+        return $this->promote;
+    }
+
+
+    /**
+     * Gets the value of promote.
+     *
+     * @return boolean
+     */
+    public function getPromote()
+    {
+        return $this->promote;
+    }
+
+    /**
+     * Sets the value of promote.
+     *
+     * @param boolean $promote the promote
+     *
+     * @return self
+     */
+     public function setPromote($promote)
+    {
+        $this->promote = $promote;
+
+        return $this;
     }
 }

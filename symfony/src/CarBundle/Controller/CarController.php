@@ -139,4 +139,24 @@ class CarController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * @Route("/promote/{id}", name="car_promote")
+     *
+     */
+    public function promoteAction($id)
+    {
+        $dataChecker = $this->get('car.data_checker');
+        $em = $this->getDoctrine()->getEntitymanager();
+        $car = $em->getRepository('CarBundle:Car')->find($id);
+        $result =  $dataChecker->checkCar($car);
+        if($result) {
+           $this->addFlash('success','Car promoted');
+       } else {
+          $this->addFlash('warning', 'Car not applicable');
+       }
+
+        return $this->redirectToRoute("car_index");
+
+    }
 }
